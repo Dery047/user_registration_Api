@@ -43,7 +43,7 @@ Note: The password field is visible in the DRF browsable API and may also appear
 ## Setup Instructions 
 
 
-Clone and run this project locally:
+Clone and run this project locally if you want to run my code and test it :)
 
 ```bash
 # Clone the repo
