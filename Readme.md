@@ -47,20 +47,20 @@ Clone and run this project locally if you want to test it :)
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/django-jwt-auth-api.git
+git clone https://github.com/your-username/user_registration_Api
 cd django-jwt-auth-api
 
-# Create a virtual environment
+# Create the virtual environment
 python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
+env\Scripts\activate # or if you use Mac: env/bin/activate 
 
-# Install dependencies
+# Install dependencies (important)
 pip install -r requirements.txt
 
 # Apply migrations
 python manage.py migrate
 
-# Run development server
+# and run it ;)
 python manage.py runserver
 
 
