@@ -48,7 +48,7 @@ Clone and run this project locally if you want to test it :)
 ```bash
 # Clone the repo
 git clone https://github.com/your-username/user_registration_Api
-cd django-jwt-auth-api
+cd user_registration_Api
 
 # Create the virtual environment
 python -m venv env
