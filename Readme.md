@@ -119,7 +119,7 @@ cd user_registration_Api
 
 # Crea un entorno virtual
 python -m venv env
-source env/bin/activate  # En Windows: env\Scripts\activate
+env\Scripts\activate # o si usas Mac: env/bin/activate 
 
 # Instala las dependencias
 pip install -r requirements.txt
@@ -127,7 +127,7 @@ pip install -r requirements.txt
 # Aplica las migraciones
 python manage.py migrate
 
-# Ejecuta el servidor de desarrollo
+# Ejecuta el servidor de desarrollo y listo ;)
 python manage.py runserver
 ```
 
