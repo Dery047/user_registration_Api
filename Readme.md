@@ -37,7 +37,7 @@ A simple and secure backend API built with Django and Django REST Framework to h
 | POST   | `/api/token/refresh/` | Refresh access token               |
 | POST   | `/api/token/verify/`  | Verify if a token is still valid   |
 
-Note: The password field is visible in the DRF browsable API and may also appear in browser autocomplete. In a real-world frontend, it will be rendered as a hidden password field.
+Note: The password field is visible in the DRF browsable API and may also appear in browser autocomplete. In a real-world frontend, it would be rendered as a hidden password field.
 
 ---
 
