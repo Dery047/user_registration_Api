@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'accounts',
     'rest_framework_simplejwt.token_blacklist',
-
+    'corsheaders',
 
 ]
 
@@ -63,7 +63,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -143,3 +146,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email backend for local testing (prints email to the console)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Default sender email address for outgoing emails
+DEFAULT_FROM_EMAIL = 'noreply@myapp.com'
+
