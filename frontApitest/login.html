@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    input, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    button {
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Usuario" required />
+    <input type="password" id="password" placeholder="Contraseña" required />
+    <button type="submit">Ingresar</button>
+  </form>
+  <div class="message" id="message"></div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const messageDiv = document.getElementById('message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      messageDiv.textContent = ''; // limpia mensajes previos
+
+      const data = {
+        username: document.getElementById('username').value,
+        password: document.getElementById('password').value,
+      };
+
+      try {
+        const res = await fetch('http://127.0.0.1:8000/api/login/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+
+        if (!res.ok) {
+          const errorData = await res.json();
+          messageDiv.textContent = errorData.detail || 'Error en login';
+          return;
+        }
+
+        const result = await res.json();
+        messageDiv.style.color = 'green';
+        messageDiv.textContent = 'Login exitoso! Token: ' + result.access;
+        // Aquí puedes guardar el token en localStorage o cookies si quieres
+        // localStorage.setItem('accessToken', result.access);
+      } catch (error) {
+        messageDiv.textContent = 'Error de red o servidor';
+      }
+    });
+  </script>
+</body>
+</html>
