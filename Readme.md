@@ -2,9 +2,9 @@
 
 This project is currently **under maintenance and development**. I’m fixing bugs and implementing new features to improve its functionality. Thank you for your understanding!
 
-### 🔧 In Progress:
-- ✉️ Email verification system
-- 🧪 Basic front-end view for API testing.
+###  In Progress:
+-  Email verification system
+-  Basic front-end view for API testing.
 
 
 
